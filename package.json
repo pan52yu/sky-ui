@@ -1,0 +1,9 @@
+{
+  "name": "sky-ui",
+  "private": true,
+  "scripts": {
+    "hello": "echo 'hello world'"
+  },
+  "devDependencies": {
+  }
+}
