@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // demo/src/App.vue
-import { Button, Input } from "@skyui/ui";
+import { Button, Input } from '@skyui/ui';
 </script>
 
 <template>

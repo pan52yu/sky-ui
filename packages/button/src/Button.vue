@@ -1,24 +1,27 @@
 <script setup lang="ts">
 // packages/button/src/button.vue
-import { hello } from "@skyui/shared"
+import { hello } from '@skyui/shared';
 
 const props = withDefaults(
   defineProps<{
     text?: string
   }>(),
   {
-    text: "World",
-  }
-)
+    text: 'World',
+  },
+);
 
 function clickHandler() {
-  hello(props.text)
+  hello(props.text);
 }
 </script>
 
 <template>
-  <button class="openx-button" @click="clickHandler">
-    <slot></slot>
+  <button
+    class="openx-button"
+    @click="clickHandler"
+  >
+    <slot />
   </button>
 </template>
 
