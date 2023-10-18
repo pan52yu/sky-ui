@@ -20,13 +20,13 @@
   "scripts": {
     "build": "vite build"
   },
-  "main": "",
-  "module": "",
+  "main": "./dist/skyui-shared.umd.js",
+  "module": "./dist/skyui-shared.mjs",
   "types": "",
   "exports": {
     ".": {
-      "require": "",
-      "import": "",
+      "require": "./dist/skyui-shared.umd.js",
+      "import": "./dist/skyui-shared.mjs",
       "types": ""
     }
   },
