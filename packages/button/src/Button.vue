@@ -21,3 +21,12 @@ function clickHandler() {
     <slot></slot>
   </button>
 </template>
+
+<style lang="scss" scoped>
+.openx-button {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin: 0 8px;
+}
+</style>
