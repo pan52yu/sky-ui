@@ -7,7 +7,8 @@
     "type:src": "pnpm run clean:type && vue-tsc -p tsconfig.src.json --composite false --declaration --emitDeclarationOnly",
     "mv-type": "tsx ./scripts/dts-mv.ts",
     "build:ui": "pnpm run type:src && pnpm --filter './packages/**' run build && pnpm run mv-type",
-    "lint:script": "eslint --ext .js,.jsx,.ts,.tsx,.vue --fix ./"
+    "lint:script": "eslint --ext .js,.jsx,.ts,.tsx,.vue --fix ./",
+    "lint:style": "stylelint --fix ./**/*.{css,scss,vue,html}"
   },
   "dependencies": {
     "vue": "^3.3.4"
@@ -25,6 +26,11 @@
     "eslint-plugin-vue": "^9.17.0",
     "rimraf": "^5.0.5",
     "sass": "^1.69.4",
+    "stylelint": "^15.11.0",
+    "stylelint-config-recess-order": "^4.3.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard-scss": "^11.0.0",
+    "stylelint-stylistic": "^0.4.3",
     "tsx": "^3.14.0",
     "typescript": "^5.2.2",
     "vite": "^4.4.11",
