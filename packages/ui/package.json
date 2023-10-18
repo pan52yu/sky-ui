@@ -18,16 +18,19 @@
     "url": "https://github.com/gkn1234/openx-ui/issues"
   },
   "scripts": {
-    "build": "vite build"
+    "build:package": "vite build --mode package",
+    "build:full": "vite build --mode full",
+    "build:full-min": "vite build --mode full-min",
+    "build": "pnpm run build:package && pnpm run build:full && pnpm run build:full-min"
   },
-  "main": "./dist/skyui-shared.umd.js",
-  "module": "./dist/skyui-shared.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/skyui-ui.umd.js",
+  "module": "./dist/skyui-ui.mjs",
+  "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/skyui-shared.umd.js",
-      "import": "./dist/skyui-shared.mjs",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/skyui-ui.umd.js",
+      "import": "./dist/skyui-ui.mjs",
+      "types": "./dist/src/index.d.ts"
     }
   },
   "files": [

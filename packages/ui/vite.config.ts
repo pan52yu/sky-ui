@@ -1,19 +1,5 @@
+// packages/ui/vite.config.ts
 import { defineConfig } from 'vite';
+import { generateVueConfig } from '../build/build.config';
 
-export default defineConfig({
-  build: {
-    lib: {
-      entry: './src/index.ts',
-      name: 'SkyuiShared',
-      fileName: 'skyui-shared',
-    },
-
-    minify: false,
-
-    rollupOptions: {
-      external: [/@skyui.*/, 'vue'],
-
-      output: {},
-    },
-  },
-});
+export default defineConfig(({ mode }) => generateVueConfig({ mode: mode as any }));
