@@ -8,7 +8,8 @@
     "mv-type": "tsx ./scripts/dts-mv.ts",
     "build:ui": "pnpm run type:src && pnpm --filter './packages/**' run build && pnpm run mv-type",
     "lint:script": "eslint --ext .js,.jsx,.ts,.tsx,.vue --fix ./",
-    "lint:style": "stylelint --fix ./**/*.{css,scss,vue,html}"
+    "lint:style": "stylelint --fix ./**/*.{css,scss,vue,html}",
+    "prepare": "husky install"
   },
   "dependencies": {
     "vue": "^3.3.4"
@@ -26,6 +27,7 @@
     "eslint-define-config": "^1.24.1",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-vue": "^9.17.0",
+    "husky": "^8.0.3",
     "prettier": "^3.0.3",
     "rimraf": "^5.0.5",
     "sass": "^1.69.4",
