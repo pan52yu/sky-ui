@@ -29,12 +29,18 @@ importers:
 
   packages/button:
     dependencies:
+      '@skyui/shared':
+        specifier: workspace:^
+        version: link:../shared
       vue:
         specifier: '>=3.0.0'
         version: 3.3.4
 
   packages/input:
     dependencies:
+      '@skyui/shared':
+        specifier: workspace:^
+        version: link:../shared
       vue:
         specifier: '>=3.0.0'
         version: 3.3.4
@@ -47,6 +53,21 @@ importers:
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
+      vue:
+        specifier: '>=3.0.0'
+        version: 3.3.4
+
+  packages/ui:
+    dependencies:
+      '@skyui/button':
+        specifier: workspace:^
+        version: link:../button
+      '@skyui/input':
+        specifier: workspace:^
+        version: link:../input
+      '@skyui/shared':
+        specifier: workspace:^
+        version: link:../shared
       vue:
         specifier: '>=3.0.0'
         version: 3.3.4

@@ -7,7 +7,7 @@
     "ui",
     "component library"
   ],
-  "author": "OpenX",
+  "author": "EvanSky",
   "license": "MIT",
   "homepage": "https://github.com/gkn1234/openx-ui/blob/master/README.md",
   "repository": {
@@ -38,6 +38,7 @@
   "peerDependencies": {
     "vue": ">=3.0.0"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "@skyui/shared": "workspace:^"
+  }
 }
