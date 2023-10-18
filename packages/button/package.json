@@ -18,16 +18,16 @@
     "url": "https://github.com/gkn1234/openx-ui/issues"
   },
   "scripts": {
-    "build": "echo build",
+    "build": "vite build",
     "test": "echo test"
   },
-  "main": "",
-  "module": "",
+  "main": "./dist/skyui-button.umd.js",
+  "module": "./dist/skyui-button.mjs",
   "types": "",
   "exports": {
     ".": {
-      "require": "",
-      "module": "",
+      "require": "./dist/skyui-button.umd.js",
+      "module": "./dist/skyui-button.mjs",
       "types": ""
     }
   },
