@@ -23,12 +23,12 @@
   },
   "main": "./dist/skyui-button.umd.js",
   "module": "./dist/skyui-button.mjs",
-  "types": "",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/skyui-button.umd.js",
       "module": "./dist/skyui-button.mjs",
-      "types": ""
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [

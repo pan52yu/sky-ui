@@ -2,9 +2,11 @@
   "name": "sky-ui",
   "private": true,
   "scripts": {
+    "clean:type": "rimraf ./dist",
     "type:node": "tsc -p tsconfig.node.json --noEmit --composite false",
-    "type:src": "vue-tsc -p tsconfig.src.json --noEmit --composite false",
-    "build:ui": "pnpm run type:src && pnpm --filter ./packages/** run build"
+    "type:src": "pnpm run clean:type && vue-tsc -p tsconfig.src.json --composite false --declaration --emitDeclarationOnly",
+    "mv-type": "tsx ./scripts/dts-mv.ts",
+    "build:ui": "pnpm run type:src && pnpm --filter './packages/**' run build && pnpm run mv-type"
   },
   "dependencies": {
     "vue": "^3.3.4"
@@ -12,7 +14,9 @@
   "devDependencies": {
     "@types/node": "^20.8.6",
     "@vitejs/plugin-vue": "^4.4.0",
+    "rimraf": "^5.0.5",
     "sass": "^1.69.4",
+    "tsx": "^3.14.0",
     "typescript": "^5.2.2",
     "vite": "^4.4.11",
     "vue-tsc": "^1.8.19"
