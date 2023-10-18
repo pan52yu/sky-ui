@@ -38,6 +38,8 @@
   "peerDependencies": {
     "vue": ">=3.0.0"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "@types/lodash": "^4.14.199",
+    "lodash": "^4.17.21"
+  }
 }
