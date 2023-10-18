@@ -4,6 +4,13 @@
   "scripts": {
     "hello": "echo 'hello world'"
   },
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
   "devDependencies": {
+    "@vitejs/plugin-vue": "^4.4.0",
+    "sass": "^1.69.4",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.11"
   }
 }
