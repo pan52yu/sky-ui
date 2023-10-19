@@ -11,7 +11,7 @@ import {
   SkyuiCssVarsConfig,
 } from '@skyui/ui';
 
-const { setTheme } = useTheme();
+// const { setTheme } = useTheme();
 
 const currentGlobalTheme = ref<'default' | 'tiny'>('default');
 
@@ -19,10 +19,10 @@ const currentGlobalTheme = ref<'default' | 'tiny'>('default');
 function switchGlobalTheme() {
   if (currentGlobalTheme.value === 'tiny') {
     currentGlobalTheme.value = 'default';
-    setTheme(themeVars);
+    useTheme().setTheme(themeVars);
   } else {
     currentGlobalTheme.value = 'tiny';
-    setTheme(tinyThemeVars);
+    useTheme().setTheme(tinyThemeVars);
   }
 }
 
@@ -42,10 +42,6 @@ function switchSecondLineTheme() {
 
 <template>
   <div>
-    <span
-      class="i-op-alert-marked inline-block"
-    />
-    123
     <!-- 第一组 button 省略 。。。 -->
     <ConfigProvider
       class="btns"
