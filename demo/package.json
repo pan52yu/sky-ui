@@ -1,5 +1,5 @@
 {
- "name": "@skyui/demo",
+  "name": "@skyui/demo",
   "private": true,
   "scripts": {
     "dev": "vite dev"
@@ -7,6 +7,5 @@
   "dependencies": {
     "@skyui/ui": "workspace:^"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
