@@ -31,7 +31,9 @@
       "require": "./dist/skyui-ui.umd.js",
       "import": "./dist/skyui-ui.mjs",
       "types": "./dist/src/index.d.ts"
-    }
+    },
+    "./*": "./*",
+    "./style/*": "./dist/style/*"
   },
   "files": [
     "dist",
@@ -42,8 +44,9 @@
   },
   "dependencies": {
     "@skyui/button": "workspace:^",
+    "@skyui/config-provider": "workspace:^",
     "@skyui/input": "workspace:^",
-    "@skyui/shared": "workspace:^"
-  },
-  "devDependencies": {}
+    "@skyui/shared": "workspace:^",
+    "@skyui/styles": "workspace:^"
+  }
 }
