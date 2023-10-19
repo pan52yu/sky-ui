@@ -1,4 +1,10 @@
 // packages/button/vite.config.ts
-import { generateVueConfig } from '../build/build.config';
+import { generateVueConfig } from '../build/scripts';
 
-export default generateVueConfig();
+export default generateVueConfig(
+  {
+    presetSkyuiOptions: {
+      include: ['button'],
+    },
+  },
+);
