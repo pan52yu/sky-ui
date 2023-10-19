@@ -1,0 +1,54 @@
+{
+  "name": "@skyui/styles",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [
+    "vue",
+    "ui",
+    "component library"
+  ],
+  "author": "EvanSky",
+  "license": "MIT",
+  "homepage": "https://github.com/gkn1234/openx-ui/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gkn1234/openx-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gkn1234/openx-ui/issues"
+  },
+  "scripts": {
+    "build:theme": "vite build --mode theme",
+    "build:unocss": "vite build --mode unocss",
+    "build": "pnpm run build:unocss && pnpm run build:theme",
+    "test": "echo test"
+  },
+  "main": "./dist/skyui-styles.umd.js",
+  "module": "./dist/skyui-styles.mjs",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/skyui-styles.umd.js",
+      "import": "./dist/skyui-styles.mjs",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./style.css": "./dist/style.css",
+    "./preset": {
+      "require": "./dist/preset.umd.js",
+      "import": "./dist/preset.mjs",
+      "types": "./dist/src/unoPreset.d.ts"
+    },
+    "./*": "./*"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "vue": ">=3.0.0",
+    "unocss": ">=0.54.1"
+  },
+  "dependencies": {
+    "@skyui/shared": "workspace:^"
+  }
+}
