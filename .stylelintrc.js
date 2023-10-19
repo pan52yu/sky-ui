@@ -14,6 +14,7 @@ module.exports = {
   rules: {
     // 自定义规则集的启用 / 禁用
     // 'stylistic/max-line-length': null,
-    'stylistic/max-line-length': 100,
+    'stylistic/max-line-length': 100, // 限制单行长度
+    'selector-class-pattern': null, // 关闭类名检测
   },
 };

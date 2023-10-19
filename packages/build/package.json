@@ -29,7 +29,8 @@
       "require": "./dist/skyui-build.umd.js",
       "import": "./dist/skyui-build.mjs",
       "types": "./dist/src/index.d.ts"
-    }
+    },
+    "./*": "./*"
   },
   "files": [
     "dist",

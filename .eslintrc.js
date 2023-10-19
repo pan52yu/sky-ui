@@ -49,6 +49,8 @@ module.exports = defineConfig({
   rules: {
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
+    'import/no-unresolved': 'off',
+    'import/no-relative-packages': 'off',
 
     // vue 允许单单词组件名
     'vue/multi-word-component-names': 'off',
@@ -63,6 +65,8 @@ module.exports = defineConfig({
 
     // 换行符不作约束
     'linebreak-style': 'off',
+
+    'no-await-in-loop': 'off',
   },
 
   // 文件级别的重写
