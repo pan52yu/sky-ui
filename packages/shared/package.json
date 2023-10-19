@@ -29,7 +29,8 @@
       "require": "./dist/skyui-shared.umd.js",
       "import": "./dist/skyui-shared.mjs",
       "types": "./dist/src/index.d.ts"
-    }
+    },
+    "./*": "./*"
   },
   "files": [
     "dist",

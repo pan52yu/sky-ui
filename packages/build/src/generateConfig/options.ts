@@ -19,9 +19,9 @@ export interface GenerateConfigOptions extends GenerateConfigPluginsOptions {
   /**
    * 生成的文件名称，
    *
-   * 默认情况下取 package 包名，转换为 kebab-case，如：@openx/request -> openx-request
+   * 默认情况下取 package 包名，转换为 kebab-case，如：@skyui/request -> skyui-request
    *
-   * 当产物为 umd 格式时，驼峰化后的 fileName 会作为全局变量名，如：openx-request -> openxRequest
+   * 当产物为 umd 格式时，驼峰化后的 fileName 会作为全局变量名，如：skyui-request -> skyuiRequest
    */
   fileName?: string;
 
@@ -35,11 +35,22 @@ export interface GenerateConfigOptions extends GenerateConfigPluginsOptions {
   mode?: 'package' | 'full' | 'full-min';
 
   /**
+  * 是否将构建产物的相对路径回写到 package.json 的 exports 字段对应的 key 中。
+  *
+  * 必须在 mode 为 packages 时生效。
+  *
+  * 当取值为 '.' 时，还会同步写入 main、module、types 字段
+  */
+  exports?: string;
+
+  /**
    * 是否将 d.ts 类型声明文件的产物从集中目录移动到产物目录，并将类型入口回写到 package.json 的 types 字段。
    *
    * 必须在 mode 为 packages 时生效。
    *
    * 输入 tsc 编译生成 d.ts 文件时所读取的 tsconfig 文件的路径。
+   *
+   * 空字符串或者 undefined 表示不处理 d.ts 文件的移动。
    * @default ''
    */
   dts?: string;
@@ -49,7 +60,7 @@ export interface GenerateConfigOptions extends GenerateConfigPluginsOptions {
    *
    * 必须在 mode 为 packages 时生效。
    */
-  onSetPkg?: (pkg: PackageJson) => void | Promise<void>;
+  onSetPkg?: (pkg: PackageJson, options: Required<GenerateConfigOptions>) => void | Promise<void>;
 }
 
 /** 构建选项的默认值 */
@@ -65,6 +76,7 @@ export function defaultOptions(): Required<GenerateConfigOptions> {
     pluginInspect: false,
     pluginVisualizer: false,
     pluginReplace: false,
+    exports: '.',
   };
 }
 
