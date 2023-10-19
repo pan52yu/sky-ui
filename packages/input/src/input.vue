@@ -22,7 +22,7 @@ function inputHandler(e: any) {
 
 <template>
   <input
-    class="openx-input"
+    class="sky-input"
     type="text"
     :value="modelValue"
     @input="inputHandler"

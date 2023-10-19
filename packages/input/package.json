@@ -9,13 +9,13 @@
   ],
   "author": "EvanSky",
   "license": "MIT",
-  "homepage": "https://github.com/gkn1234/openx-ui/blob/master/README.md",
+  "homepage": "https://github.com/pan52yu/sky-ui/blob/main/README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gkn1234/openx-ui.git"
+    "url": "git+https://github.com/pan52yu/sky-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/gkn1234/openx-ui/issues"
+    "url": "https://github.com/pan52yu/sky-ui/issues"
   },
   "scripts": {
     "build": "vite build",
