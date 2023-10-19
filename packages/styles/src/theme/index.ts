@@ -7,6 +7,7 @@ import { themeColorLevelsEnabledKeys, SkyuiCssVarsConfig } from '../vars';
 const THEME_PROVIDE_KEY = '__SkyUITheme__';
 
 function useGlobalTheme(app: App, options?: SkyuiCssVarsConfig) {
+  // TODO: 全局切换主题现在会报错
   /** 设置全局主题变量的方法 */
   function setTheme(styleObj: SkyuiCssVarsConfig) {
     // 设置主题变量时，兼顾主题色的色阶

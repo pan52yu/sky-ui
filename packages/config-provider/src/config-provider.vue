@@ -1,8 +1,7 @@
 <script setup lang="ts">
-// packages/config-provider/src/config-provider.vue
 import { computed } from 'vue';
 import { generateCssVars, themeColorLevelsEnabledKeys } from '@skyui/styles';
-import { ConfigProviderProps, defaultConfigProviderProps } from './config-provider.ts';
+import { ConfigProviderProps, defaultConfigProviderProps } from './config-provider';
 
 const props = withDefaults(
   defineProps<ConfigProviderProps>(),

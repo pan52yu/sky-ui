@@ -1,3 +1,4 @@
 // packages/shared/src/index.ts
 export * from './hello';
-export * from './useLodash';
+export * from './types';
+export * from './typeCheck';
