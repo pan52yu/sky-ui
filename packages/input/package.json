@@ -43,5 +43,9 @@
   "dependencies": {
     "@skyui/button": "workspace:^",
     "@skyui/shared": "workspace:^"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }
