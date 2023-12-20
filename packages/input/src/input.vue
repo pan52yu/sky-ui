@@ -2,6 +2,10 @@
 // packages/input/src/input.vue
 import { hello } from '@skyui/shared';
 
+defineOptions({
+  name: 'SkyInput',
+});
+
 withDefaults(defineProps<{
   modelValue?: string;
 }>(), {

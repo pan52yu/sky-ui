@@ -1,7 +1,7 @@
 // packages/styles/src/vars/theme.ts
 /** 基础颜色主题变量 */
 export const themeColors = {
-  'color-primary': '#c7000b',
+  'color-primary': '#00aaff',
   'color-success': '#50d4ab',
   'color-warning': '#fbb175',
   'color-danger': '#f66f6a',

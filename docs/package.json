@@ -2,11 +2,11 @@
   "name": "@skyui/docs",
   "private": true,
   "scripts": {
-    "dev": "echo dev",
-    "build": "echo build"
-  },
-  "dependencies": {
+    "dev": "vitepress dev . --host",
+    "build": "vitepress build .",
+    "preview": "vitepress preview . --host"
   },
   "devDependencies": {
+    "vitepress": "1.0.0-rc.32"
   }
 }

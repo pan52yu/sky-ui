@@ -3,6 +3,10 @@
 import { computed } from 'vue';
 import { defaultButtonProps, ButtonProps } from './button';
 
+defineOptions({
+  name: 'SkyButton',
+});
+
 const props = withDefaults(
   defineProps<ButtonProps>(),
   defaultButtonProps(),

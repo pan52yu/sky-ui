@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "clean:type": "rimraf ./dist",
+    "clean:dist": "rimraf ./packages/*/dist",
     "type:node": "tsc -p tsconfig.node.json --noEmit --composite false",
     "type:src": "pnpm run clean:type && vue-tsc -p tsconfig.src.json --composite false --declaration --emitDeclarationOnly",
     "build:ui": "pnpm run type:src && pnpm --filter './packages/**' run build",
