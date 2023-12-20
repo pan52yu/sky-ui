@@ -24,7 +24,14 @@
     "items": [
       {
         "text": "ConfigProvider 配置",
-        "link": "/components/config-provider"
+        "link": "/api/modules/ConfigProvider",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "ConfigProviderProps",
+            "link": "/api/interfaces/ConfigProvider.ConfigProviderProps"
+          }
+        ]
       }
     ]
   },

@@ -1,6 +1,6 @@
 <!-- docs/.vitepress/components/Playground.vue -->
 <script setup lang="ts">
-import { ref, reactive, watch, onMounted, watchEffect } from 'vue';
+import { ref, watch, watchEffect, reactive, onMounted } from 'vue';
 import { Repl, ReplStore, File } from '@vue/repl';
 import '@vue/repl/style.css';
 import { APP_WRAPPER_CODE } from './Playground';
@@ -23,9 +23,11 @@ const store = new ReplStore({
 // @vue/repl 的内容变化时，及时同步到 url 参数中
 watchEffect(() => window.history.replaceState({}, '', store.serialize()));
 
+store.state.mainFile = 'src/AppWrapper.vue';
+store.addFile(new File('src/AppWrapper.vue', APP_WRAPPER_CODE, true));
+
 const previewOptions = reactive({});
 
-// TS 版本切换部分
 const tsVersions = ref<string[]>([]);
 
 /** 获取所有 TypeScript 版本 */
@@ -115,9 +117,6 @@ function setUiVersion(version: string) {
   // 加载组件库的全量样式
   previewOptions.headHTML = `<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@openxui/ui@${version}/dist/style/index.css">`;
 }
-
-store.state.mainFile = 'src/AppWrapper.vue';
-store.addFile(new File('src/AppWrapper.vue', APP_WRAPPER_CODE, true));
 </script>
 
 <template>
@@ -138,7 +137,6 @@ store.addFile(new File('src/AppWrapper.vue', APP_WRAPPER_CODE, true));
             {{ item }}
           </option>
         </select>
-
         <label class="playground-label">Vue: </label>
         <select v-model="vueVersion" class="playground-select" :disabled="isVueLoading">
           <option value="latest">latest</option>

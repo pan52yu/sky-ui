@@ -3,20 +3,14 @@
 import { ref } from 'vue';
 import { hello } from '@skyui/shared';
 import {
-  defaultInputProps,
-  InputProps,
-  InputEmits,
-  InputExpose,
+  defaultInputProps, InputProps, InputEmits, InputExpose,
 } from './props';
 
 defineOptions({
   name: 'SkyInput',
 });
 
-withDefaults(
-  defineProps<InputProps>(),
-  defaultInputProps(),
-);
+withDefaults(defineProps<InputProps>(), defaultInputProps());
 
 const emit = defineEmits<InputEmits>();
 
@@ -36,14 +30,8 @@ defineExpose<InputExpose>({
   clear,
   a,
 });
-
 </script>
 
 <template>
-  <input
-    class="openx-input"
-    type="text"
-    :value="modelValue"
-    @input="inputHandler"
-  >
+  <input type="text" :value="modelValue" @input="inputHandler">
 </template>

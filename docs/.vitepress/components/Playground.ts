@@ -2,7 +2,7 @@
 export const APP_WRAPPER_CODE = `
 <script setup lang="ts">
 import { getCurrentInstance } from 'vue';
-import { Theme } from '@openxui/ui';
+import { Theme } from '@skyui/ui';
 import App from './App.vue';
 
 const instance = getCurrentInstance();

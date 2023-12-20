@@ -1,6 +1,6 @@
 // docs/scripts/typedoc.ts
 import {
-  Application, ProjectReflection, ReflectionKind, TSConfigReader,
+  Application, TSConfigReader, ReflectionKind, ProjectReflection,
 } from 'typedoc';
 import { join } from 'node:path';
 import { readFile, writeFile } from 'node:fs/promises';
@@ -17,20 +17,42 @@ const OUT_DIR = join(__dirname, '..', 'api');
 /** 章节导航配置所在目录 */
 const CONFIGS_DIR = join(__dirname, '..', 'configs');
 
-async function readComponentsConfig(jsonDir: string) {
-  const buffer = await readFile(jsonDir, 'utf8');
-  return JSON.parse(buffer.toString()) as DefaultTheme.SidebarItem[];
+async function main() {
+  const app = await Application.bootstrapWithPlugins(
+    {
+      // 指定文件入口，支持 globs 匹配多文件。规定为所有组件包内的 src/props.ts 文件。
+      entryPoints: [fromRoot('packages', '**', 'props.ts')],
+
+      // tsconfig 配置
+      tsconfig: tsConfigPath,
+
+      // 启用 markdown 转化插件
+      plugin: ['typedoc-plugin-markdown'],
+
+      // 更多配置项参考：https://typedoc.org/options/
+      disableSources: true,
+      readme: 'none',
+      skipErrorChecking: true,
+    },
+    [new TSConfigReader()],
+  );
+
+  const project = await app.convert();
+
+  if (project) {
+    // 生成并输出产物
+    await app.generateDocs(project, OUT_DIR);
+
+    // 生成产物 json 文件
+    const jsonDir = join(OUT_DIR, 'documentation.json');
+    await app.generateJson(project, jsonDir);
+
+    // 根据产物信息，动态生成 API 文档部分的章节导航
+    await resolveConfig(jsonDir, join(CONFIGS_DIR, 'components.json'));
+  }
 }
 
-function findComponentFromConfig(config: DefaultTheme.SidebarItem[], name: string) {
-  let itemIndex = -1;
-  const targetCategory = config.find((category) => {
-    if (!category.items || category.items.length <= 0) return false;
-    itemIndex = category.items.findIndex((comp) => comp.text?.startsWith(name));
-    return itemIndex >= 0;
-  });
-  return itemIndex >= 0 ? targetCategory?.items?.[itemIndex] || null : null;
-}
+main().catch(console.error);
 
 /** 生成 sidebar 目录 config */
 async function resolveConfig(documentJsonDir: string, componentsConfigJsonDir: string) {
@@ -75,39 +97,17 @@ async function resolveConfig(documentJsonDir: string, componentsConfigJsonDir: s
   await writeFile(join(CONFIGS_DIR, 'api.json'), JSON.stringify(componentsConfig, null, 2), 'utf8');
 }
 
-async function main() {
-  const app = await Application.bootstrapWithPlugins(
-    {
-      // 指定文件入口，支持 globs 匹配多文件。规定为所有组件包内的 src/props.ts 文件。
-      entryPoints: [fromRoot('packages', '**', 'props.ts')],
-
-      // tsconfig 配置
-      tsconfig: tsConfigPath,
-
-      // 启用 markdown 转化插件
-      plugin: ['typedoc-plugin-markdown'],
-
-      // 更多配置项参考：https://typedoc.org/options/
-      disableSources: true,
-      readme: 'none',
-      skipErrorChecking: true,
-    },
-    [new TSConfigReader()],
-  );
-
-  const project = await app.convert();
-
-  if (project) {
-    // 生成并输出产物
-    await app.generateDocs(project, OUT_DIR);
-
-    // 生成产物 json 文件
-    const jsonDir = join(OUT_DIR, 'documentation.json');
-    await app.generateJson(project, jsonDir);
-
-    // 根据产物信息，动态生成 API 文档部分的章节导航
-    await resolveConfig(jsonDir, join(CONFIGS_DIR, 'components.json'));
-  }
+async function readComponentsConfig(jsonDir: string) {
+  const buffer = await readFile(jsonDir, 'utf8');
+  return JSON.parse(buffer.toString()) as DefaultTheme.SidebarItem[];
 }
 
-main().catch(console.error);
+function findComponentFromConfig(config: DefaultTheme.SidebarItem[], name: string) {
+  let itemIndex = -1;
+  const targetCategory = config.find((category) => {
+    if (!category.items || category.items.length <= 0) return false;
+    itemIndex = category.items.findIndex((comp) => comp.text?.startsWith(name));
+    return itemIndex >= 0;
+  });
+  return itemIndex >= 0 ? targetCategory?.items?.[itemIndex] || null : null;
+}

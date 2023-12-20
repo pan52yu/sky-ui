@@ -1,7 +1,6 @@
 // docs/.vitepress/theme/index.ts
 import DefaultTheme from 'vitepress/theme';
 import { EnhanceAppContext } from 'vitepress';
-// import { Theme } from '@openxui/ui';
 import { Theme } from '@skyui/ui';
 import { Demo } from '../components';
 

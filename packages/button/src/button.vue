@@ -1,11 +1,6 @@
 <script setup lang="ts">
-// packages/button/src/button.vue
 import { computed } from 'vue';
 import { defaultButtonProps, ButtonProps, ButtonSlots } from './props';
-
-defineOptions({
-  name: 'SkyButton',
-});
 
 const props = withDefaults(defineProps<ButtonProps>(), defaultButtonProps());
 
@@ -30,10 +25,7 @@ const classes = computed(() => {
 </script>
 
 <template>
-  <button
-    class="op-button"
-    :class="classes"
-  >
-    <slot />
+  <button class="op-button" :class="classes">
+    <slot :type="type" />
   </button>
 </template>

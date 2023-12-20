@@ -8,9 +8,9 @@ import type Input from './input.vue';
 /** 输入框组件的属性 */
 export interface InputProps extends ButtonProps {
   /**
-     * 输入值，支持 v-model 双向绑定
-     * @default ''
-     */
+   * 输入值，支持 v-model 双向绑定
+   * @default ''
+   */
   modelValue?: string;
 }
 
@@ -25,12 +25,17 @@ export function defaultInputProps(): Required<InferVueDefaults<InputProps>> {
 /** 输入框组件的事件 */
 export interface InputEmits {
   /**
-     * 11111
-     * @param val 输入框的值
-     */
+   * 11111
+   * @param event
+   * @param val 输入框的值
+   */
   (event: 'update:modelValue', val: string): void;
 
-  /** 22222 */
+  /**
+   * 22222
+   * @param event
+   * @param val 输入框的值
+   */
   (event: 'input', val: string): void;
 }
 

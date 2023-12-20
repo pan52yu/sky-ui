@@ -1,4 +1,4 @@
-// packages/config-provider/src/config-provider.ts
+/** @module ConfigProvider */
 import { Component } from 'vue';
 import { SkyuiCssVarsConfig } from '@skyui/styles';
 import { InferVueDefaults } from '@skyui/shared';
@@ -12,6 +12,7 @@ export interface ConfigProviderProps {
   themeVars?: SkyuiCssVarsConfig;
 }
 
+/** @hidden */
 export function defaultConfigProviderProps(): Required<InferVueDefaults<ConfigProviderProps>> {
   return {
     tag: 'div',

@@ -50,8 +50,6 @@ export function getLib(
 
   const libOptions: LibraryOptions = {
     entry,
-    // 全量构建只生产 umd 产物
-    // formats: mode === 'package' ? ['es', 'umd'] : ['umd'],
     formats: ['es', 'umd'],
     name: camelCase(finalName),
     fileName: (format) => {

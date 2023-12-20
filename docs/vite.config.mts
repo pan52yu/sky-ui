@@ -1,4 +1,3 @@
-// docs/vite.config.mts
 import {defineConfig} from 'vite';
 import {join} from 'node:path';
 import unocss from 'unocss/vite';
@@ -22,6 +21,6 @@ export default defineConfig({
         exclude: ['@vue/repl'],
     },
     ssr: {
-        noExternal: ['@vueuse/repl'],
-    }
+        noExternal: ['@vue/repl'],
+    },
 });

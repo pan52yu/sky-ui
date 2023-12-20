@@ -16,5 +16,6 @@ module.exports = {
     // 'stylistic/max-line-length': null,
     'stylistic/max-line-length': 100, // 限制单行长度
     'selector-class-pattern': null, // 关闭类名检测
+    'custom-property-pattern': null, // 关闭自定义属性检测
   },
 };

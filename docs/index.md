@@ -5,15 +5,15 @@
 # VitePress 默认主题的首页模板：https://vitepress.dev/reference/default-theme-layout#home-layout
 layout: home
 
-title: OpenxUI
+title: SkyUI
 
 hero:
-  name: OpenxUI
+  name: SkyUI
   text: Vue3 组件库
   tagline: 从 0 到 1 搭建 Vue 组件库
   image:
     src: /logo.png
-    alt: OpenX
+    alt: SkyUI Logo
   actions:
     - theme: brand
       text: 指南
