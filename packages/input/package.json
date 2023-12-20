@@ -1,5 +1,5 @@
 {
-  "name": "@skyui/input",
+  "name": "@skyuix/input",
   "version": "0.0.0",
   "description": "",
   "keywords": [
@@ -21,13 +21,13 @@
     "build": "vite build",
     "test": "echo test"
   },
-  "main": "./dist/skyui-input.umd.js",
-  "module": "./dist/skyui-input.mjs",
+  "main": "./dist/skyuix-input.umd.js",
+  "module": "./dist/skyuix-input.mjs",
   "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/skyui-input.umd.js",
-      "import": "./dist/skyui-input.mjs",
+      "require": "./dist/skyuix-input.umd.js",
+      "import": "./dist/skyuix-input.mjs",
       "types": "./dist/src/index.d.ts"
     },
     "./*": "./*",
@@ -45,7 +45,7 @@
     "vue": ">=3.0.0"
   },
   "dependencies": {
-    "@skyui/button": "workspace:^",
-    "@skyui/shared": "workspace:^"
+    "@skyuix/button": "workspace:^",
+    "@skyuix/shared": "workspace:^"
   }
 }

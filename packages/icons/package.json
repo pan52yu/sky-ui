@@ -1,5 +1,5 @@
 {
-  "name": "@skyui/icons",
+  "name": "@skyuix/icons",
   "version": "0.0.0",
   "description": "",
   "keywords": [
@@ -21,13 +21,13 @@
     "build": "vite build",
     "test": "echo test"
   },
-  "main": "./dist/skyui-icons.umd.js",
-  "module": "./dist/skyui-icons.mjs",
+  "main": "./dist/skyuix-icons.umd.js",
+  "module": "./dist/skyuix-icons.mjs",
   "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/skyui-icons.umd.js",
-      "import": "./dist/skyui-icons.mjs",
+      "require": "./dist/skyuix-icons.umd.js",
+      "import": "./dist/skyuix-icons.mjs",
       "types": "./dist/src/index.d.ts"
     },
     "./*": "./*",

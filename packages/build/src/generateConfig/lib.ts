@@ -45,7 +45,7 @@ export function getLib(
     entry, outDir, mode, fileName,
   } = getOptions(options);
 
-  // 文件名称，默认取 package.json 的 name 字段转换成 kebab-case：@skyui/build => skyui-build
+  // 文件名称，默认取 package.json 的 name 字段转换成 kebab-case：@skyuix/build => skyuix-build
   const finalName = fileName || kebabCase(packageJson.name || '');
 
   const libOptions: LibraryOptions = {

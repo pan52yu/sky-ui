@@ -2,7 +2,7 @@
 
 // packages/button/src/props.ts
 /** @module Button */
-import { InferVueDefaults } from '@skyui/shared';
+import { InferVueDefaults } from '@skyuix/shared';
 
 export type ButtonType = '' | 'primary' | 'success' | 'info' | 'warning' | 'danger';
 

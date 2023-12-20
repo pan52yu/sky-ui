@@ -19,9 +19,9 @@ export interface GenerateConfigOptions extends GenerateConfigPluginsOptions {
   /**
    * 生成的文件名称，
    *
-   * 默认情况下取 package 包名，转换为 kebab-case，如：@skyui/request -> skyui-request
+   * 默认情况下取 package 包名，转换为 kebab-case，如：@skyuix/request -> skyuix-request
    *
-   * 当产物为 umd 格式时，驼峰化后的 fileName 会作为全局变量名，如：skyui-request -> skyuiRequest
+   * 当产物为 umd 格式时，驼峰化后的 fileName 会作为全局变量名，如：skyuix-request -> skyuiRequest
    */
   fileName?: string;
 

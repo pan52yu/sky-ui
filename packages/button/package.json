@@ -1,5 +1,5 @@
 {
-  "name": "@skyui/button",
+  "name": "@skyuix/button",
   "version": "0.0.0",
   "description": "",
   "keywords": [
@@ -21,13 +21,13 @@
     "build": "vite build",
     "test": "echo test"
   },
-  "main": "./dist/skyui-button.umd.js",
-  "module": "./dist/skyui-button.mjs",
+  "main": "./dist/skyuix-button.umd.js",
+  "module": "./dist/skyuix-button.mjs",
   "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/skyui-button.umd.js",
-      "import": "./dist/skyui-button.mjs",
+      "require": "./dist/skyuix-button.umd.js",
+      "import": "./dist/skyuix-button.mjs",
       "types": "./dist/src/index.d.ts"
     },
     "./*": "./*",
@@ -45,6 +45,6 @@
     "vue": ">=3.0.0"
   },
   "dependencies": {
-    "@skyui/shared": "workspace:^"
+    "@skyuix/shared": "workspace:^"
   }
 }

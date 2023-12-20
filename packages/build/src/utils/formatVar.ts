@@ -4,13 +4,13 @@ function splitVar(varName: string) {
   return varName.match(reg) || <string[]>[];
 }
 
-/** 将变量名转换为肉串形式：@skyui/build -> skyui-build */
+/** 将变量名转换为肉串形式：@skyuix/build -> skyuix-build */
 export function kebabCase(varName: string) {
   const nameArr = splitVar(varName);
   return nameArr.map((item) => item.toLowerCase()).join('-');
 }
 
-/** 将变量名转换为驼峰形式：@skyui/build -> skyuiBuild */
+/** 将变量名转换为驼峰形式：@skyuix/build -> skyuiBuild */
 export function camelCase(varName: string, isFirstWordUpperCase = false) {
   const nameArr = splitVar(varName);
   return nameArr.map((item, index) => {

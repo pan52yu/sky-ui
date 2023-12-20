@@ -1,7 +1,7 @@
 /** @module ConfigProvider */
 import { Component } from 'vue';
-import { SkyuiCssVarsConfig } from '@skyui/styles';
-import { InferVueDefaults } from '@skyui/shared';
+import { SkyuiCssVarsConfig } from '@skyuix/styles';
+import { InferVueDefaults } from '@skyuix/shared';
 import type ConfigProvider from './config-provider.vue';
 
 export interface ConfigProviderProps {

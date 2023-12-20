@@ -102,13 +102,13 @@ importers:
 
   demo:
     dependencies:
-      '@skyui/ui':
+      '@skyuix/ui':
         specifier: workspace:^
         version: link:../packages/ui
 
   docs:
     dependencies:
-      '@skyui/ui':
+      '@skyuix/ui':
         specifier: workspace:^
         version: link:../packages/ui
       '@vue/repl':
@@ -163,7 +163,7 @@ importers:
 
   packages/button:
     dependencies:
-      '@skyui/shared':
+      '@skyuix/shared':
         specifier: workspace:^
         version: link:../shared
       vue:
@@ -172,10 +172,10 @@ importers:
 
   packages/config-provider:
     dependencies:
-      '@skyui/shared':
+      '@skyuix/shared':
         specifier: workspace:^
         version: link:../shared
-      '@skyui/styles':
+      '@skyuix/styles':
         specifier: workspace:^
         version: link:../styles
       vue:
@@ -193,10 +193,10 @@ importers:
 
   packages/input:
     dependencies:
-      '@skyui/button':
+      '@skyuix/button':
         specifier: workspace:^
         version: link:../button
-      '@skyui/shared':
+      '@skyuix/shared':
         specifier: workspace:^
         version: link:../shared
       vue:
@@ -217,7 +217,7 @@ importers:
 
   packages/styles:
     dependencies:
-      '@skyui/shared':
+      '@skyuix/shared':
         specifier: workspace:^
         version: link:../shared
       unocss:
@@ -229,19 +229,19 @@ importers:
 
   packages/ui:
     dependencies:
-      '@skyui/button':
+      '@skyuix/button':
         specifier: workspace:^
         version: link:../button
-      '@skyui/config-provider':
+      '@skyuix/config-provider':
         specifier: workspace:^
         version: link:../config-provider
-      '@skyui/input':
+      '@skyuix/input':
         specifier: workspace:^
         version: link:../input
-      '@skyui/shared':
+      '@skyuix/shared':
         specifier: workspace:^
         version: link:../shared
-      '@skyui/styles':
+      '@skyuix/styles':
         specifier: workspace:^
         version: link:../styles
       vue:

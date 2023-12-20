@@ -8,8 +8,8 @@
     "types": [],
     // 因为 baseUrl 改变了，基础配置中的 paths 也需要一并重写
     "paths": {
-      // 将 @skyui/xxx 内部依赖定位到源码路径
-      "@skyui/*": ["../packages/*/src"]
+      // 将 @skyuix/xxx 内部依赖定位到源码路径
+      "@skyuix/*": ["../packages/*/src"]
     }
   },
   "include": [

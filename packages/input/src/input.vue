@@ -1,7 +1,7 @@
 <!-- packages/input/src/input.vue -->
 <script setup lang="ts">
 import { ref } from 'vue';
-import { hello } from '@skyui/shared';
+import { hello } from '@skyuix/shared';
 import {
   defaultInputProps, InputProps, InputEmits, InputExpose,
 } from './props';

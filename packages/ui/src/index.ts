@@ -1,6 +1,6 @@
 // packages/ui/src/index.ts
-export * from '@skyui/button';
-export * from '@skyui/input';
-export * from '@skyui/config-provider';
-export * from '@skyui/shared';
-export * from '@skyui/styles';
+export * from '@skyuix/button';
+export * from '@skyuix/input';
+export * from '@skyuix/config-provider';
+export * from '@skyuix/shared';
+export * from '@skyuix/styles';

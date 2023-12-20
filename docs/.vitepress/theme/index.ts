@@ -1,7 +1,7 @@
 // docs/.vitepress/theme/index.ts
 import DefaultTheme from 'vitepress/theme';
 import { EnhanceAppContext } from 'vitepress';
-import { Theme } from '@skyui/ui';
+import { Theme } from '@skyuix/ui';
 import { Demo } from '../components';
 
 // 应用组件库的 unocss 预设，配置文件在根目录的 uno.config.ts

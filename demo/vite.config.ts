@@ -9,7 +9,7 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: /^@skyui\/(.+)$/,
+        find: /^@skyuix\/(.+)$/,
         replacement: join(__dirname, '..', 'packages', '$1', 'src'),
       },
     ],

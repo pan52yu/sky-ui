@@ -1,9 +1,9 @@
 {
-  "name": "@skyui/docs",
+  "name": "@skyuix/docs",
   "private": true,
   "scripts": {
     "api": "tsx scripts/typedoc.ts",
-    "dev": "vitepress dev . --host",
+    "dev": "pnpm run api && vitepress dev . --host",
     "build": "pnpm run api && vitepress build .",
     "preview": "vitepress preview . --host"
   },
@@ -14,7 +14,7 @@
     "vitepress": "1.0.0-rc.32"
   },
   "dependencies": {
-    "@skyui/ui": "workspace:^",
+    "@skyuix/ui": "workspace:^",
     "@vue/repl": "^3.0.1",
     "markdown-it": "^14.0.0",
     "markdown-it-container": "^4.0.0"

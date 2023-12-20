@@ -1,6 +1,6 @@
 // packages/styles/src/theme/index.ts
 import { inject, App, Plugin } from 'vue';
-import { isObjectLike } from '@skyui/shared';
+import { isObjectLike } from '@skyuix/shared';
 import { generateCssVars } from '../utils';
 import { themeColorLevelsEnabledKeys, SkyuiCssVarsConfig } from '../vars';
 

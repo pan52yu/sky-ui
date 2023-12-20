@@ -1,5 +1,5 @@
 {
-  "name": "@skyui/shared",
+  "name": "@skyuix/shared",
   "version": "0.0.0",
   "description": "",
   "keywords": [
@@ -21,13 +21,13 @@
     "build": "vite build",
     "test": "echo test"
   },
-  "main": "./dist/skyui-shared.umd.js",
-  "module": "./dist/skyui-shared.mjs",
+  "main": "./dist/skyuix-shared.umd.js",
+  "module": "./dist/skyuix-shared.mjs",
   "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/skyui-shared.umd.js",
-      "import": "./dist/skyui-shared.mjs",
+      "require": "./dist/skyuix-shared.umd.js",
+      "import": "./dist/skyuix-shared.mjs",
       "types": "./dist/src/index.d.ts"
     },
     "./*": "./*"

@@ -1,5 +1,5 @@
 {
-  "name": "@skyui/build",
+  "name": "@skyuix/build",
   "version": "0.0.0",
   "description": "",
   "keywords": [
@@ -21,13 +21,13 @@
     "build": "vite build",
     "test": "echo test"
   },
-  "main": "./dist/skyui-build.umd.js",
-  "module": "./dist/skyui-build.mjs",
+  "main": "./dist/skyuix-build.umd.js",
+  "module": "./dist/skyuix-build.mjs",
   "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/skyui-build.umd.js",
-      "import": "./dist/skyui-build.mjs",
+      "require": "./dist/skyuix-build.umd.js",
+      "import": "./dist/skyuix-build.mjs",
       "types": "./dist/src/index.d.ts"
     },
     "./*": "./*"

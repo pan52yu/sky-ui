@@ -7,7 +7,7 @@ import {
   tinyThemeVars,
   themeVars,
   SkyuiCssVarsConfig,
-} from '@skyui/ui';
+} from '@skyuix/ui';
 
 const { setTheme } = useTheme();
 

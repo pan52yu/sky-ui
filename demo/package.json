@@ -1,11 +1,11 @@
 {
-  "name": "@skyui/demo",
+  "name": "@skyuix/demo",
   "private": true,
   "scripts": {
     "dev": "vite dev"
   },
   "dependencies": {
-    "@skyui/ui": "workspace:^"
+    "@skyuix/ui": "workspace:^"
   },
   "devDependencies": {}
 }

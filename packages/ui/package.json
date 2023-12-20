@@ -1,5 +1,5 @@
 {
-  "name": "@skyui/ui",
+  "name": "@skyuix/ui",
   "version": "0.0.0",
   "description": "",
   "keywords": [
@@ -23,13 +23,13 @@
     "build:full-min": "vite build --mode full-min",
     "build": "pnpm run build:package && pnpm run build:full && pnpm run build:full-min"
   },
-  "main": "./dist/skyui-ui.umd.js",
-  "module": "./dist/skyui-ui.mjs",
+  "main": "./dist/skyuix-ui.umd.js",
+  "module": "./dist/skyuix-ui.mjs",
   "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/skyui-ui.umd.js",
-      "import": "./dist/skyui-ui.mjs",
+      "require": "./dist/skyuix-ui.umd.js",
+      "import": "./dist/skyuix-ui.mjs",
       "types": "./dist/src/index.d.ts"
     },
     "./*": "./*",
@@ -47,10 +47,10 @@
     "vue": ">=3.0.0"
   },
   "dependencies": {
-    "@skyui/button": "workspace:^",
-    "@skyui/config-provider": "workspace:^",
-    "@skyui/input": "workspace:^",
-    "@skyui/shared": "workspace:^",
-    "@skyui/styles": "workspace:^"
+    "@skyuix/button": "workspace:^",
+    "@skyuix/config-provider": "workspace:^",
+    "@skyuix/input": "workspace:^",
+    "@skyuix/shared": "workspace:^",
+    "@skyuix/styles": "workspace:^"
   }
 }

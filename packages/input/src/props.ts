@@ -1,8 +1,8 @@
 // packages/input/src/props.ts
 /** @module Input */
 import { Ref } from 'vue';
-import { InferVueDefaults } from '@skyui/shared';
-import { ButtonProps, defaultButtonProps } from '@skyui/button';
+import { InferVueDefaults } from '@skyuix/shared';
+import { ButtonProps, defaultButtonProps } from '@skyuix/button';
 import type Input from './input.vue';
 
 /** 输入框组件的属性 */

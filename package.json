@@ -4,6 +4,8 @@
   "scripts": {
     "clean:type": "rimraf ./dist",
     "clean:dist": "rimraf ./packages/*/dist",
+    "clean:node_modules": "rimraf ./packages/*/node_modules",
+    "clean:all": "pnpm run clean:type && pnpm run clean:dist && pnpm run clean:node_modules",
     "type:node": "tsc -p tsconfig.node.json --noEmit --composite false",
     "type:src": "pnpm run clean:type && vue-tsc -p tsconfig.src.json --composite false --declaration --emitDeclarationOnly",
     "build:ui": "pnpm run type:src && pnpm --filter './packages/**' run build",

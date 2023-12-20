@@ -1,5 +1,5 @@
 {
-  "name": "@skyui/styles",
+  "name": "@skyuix/styles",
   "version": "0.0.0",
   "description": "",
   "keywords": [
@@ -23,13 +23,13 @@
     "build": "pnpm run build:unocss && pnpm run build:theme",
     "test": "echo test"
   },
-  "main": "./dist/skyui-styles.umd.js",
-  "module": "./dist/skyui-styles.mjs",
+  "main": "./dist/skyuix-styles.umd.js",
+  "module": "./dist/skyuix-styles.mjs",
   "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/skyui-styles.umd.js",
-      "import": "./dist/skyui-styles.mjs",
+      "require": "./dist/skyuix-styles.umd.js",
+      "import": "./dist/skyuix-styles.mjs",
       "types": "./dist/src/index.d.ts"
     },
     "./style.css": "./dist/style.css",
@@ -53,6 +53,6 @@
     "unocss": ">=0.54.1"
   },
   "dependencies": {
-    "@skyui/shared": "workspace:^"
+    "@skyuix/shared": "workspace:^"
   }
 }
