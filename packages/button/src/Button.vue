@@ -7,10 +7,7 @@ defineOptions({
   name: 'SkyButton',
 });
 
-const props = withDefaults(
-  defineProps<ButtonProps>(),
-  defaultButtonProps(),
-);
+const props = withDefaults(defineProps<ButtonProps>(), defaultButtonProps());
 
 defineSlots<ButtonSlots>();
 
@@ -30,7 +27,6 @@ const classes = computed(() => {
 
   return result;
 });
-
 </script>
 
 <template>

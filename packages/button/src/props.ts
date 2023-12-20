@@ -37,8 +37,11 @@ export function defaultButtonProps() {
 
 /** 按钮组件的插槽信息 */
 export interface ButtonSlots {
-  default(props: {
-    /** 按钮的类型 */
-    type: ButtonType
-  }): any;
+  /** 按钮的内容 */
+  default: void;
 }
+
+// default(props: {
+//   /** 按钮的类型 */
+//   type: ButtonType
+// }): any;
