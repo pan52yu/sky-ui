@@ -2,7 +2,7 @@
 // demo/src/App.vue
 import { ref, reactive } from 'vue';
 import {
-  SkyButton,
+  Button,
   SkyInput,
   ConfigProvider,
   useTheme,
@@ -42,53 +42,53 @@ function switchSecondLineTheme() {
 
 <template>
   <div>
-    <!-- 第一组 SkyButton 省略 。。。 -->
+    <!-- 第一组 Button 省略 。。。 -->
     <ConfigProvider
       class="btns"
       :theme-vars="secondLineThemeVars"
     >
-      <SkyButton plain>
+      <Button plain>
         Button
-      </SkyButton>
-      <SkyButton
+      </Button>
+      <Button
         type="primary"
         plain
       >
-        SkyButton
-      </SkyButton>
-      <SkyButton
+        Button
+      </Button>
+      <Button
         type="success"
         plain
       >
-        SkyButton
-      </SkyButton>
-      <SkyButton
+        Button
+      </Button>
+      <Button
         type="danger"
         plain
       >
-        SkyButton
-      </SkyButton>
-      <SkyButton
+        Button
+      </Button>
+      <Button
         type="warning"
         plain
       >
-        SkyButton
-      </SkyButton>
-      <SkyButton
+        Button
+      </Button>
+      <Button
         type="info"
         plain
       >
-        SkyButton
-      </SkyButton>
+        Button
+      </Button>
     </ConfigProvider>
-    <!-- 第三组 SkyButton 省略 。。。 -->
+    <!-- 第三组 Button 省略 。。。 -->
     <div class="btns">
-      <SkyButton @click="switchGlobalTheme">
+      <Button @click="switchGlobalTheme">
         切换全局主题，当前：{{ currentGlobalTheme }}
-      </SkyButton>
-      <SkyButton @click="switchSecondLineTheme">
+      </Button>
+      <Button @click="switchSecondLineTheme">
         切换第二行主题，当前：{{ currentSecondLineTheme }}
-      </SkyButton>
+      </Button>
     </div>
     <sky-input />
   </div>

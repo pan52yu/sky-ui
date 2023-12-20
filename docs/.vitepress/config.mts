@@ -1,5 +1,6 @@
 // docs/.vitepress/config.mts
 import { defineConfig } from 'vitepress';
+import {mdPlugin} from './plugins';
 
 // 配置参考：https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -36,4 +37,10 @@ export default defineConfig({
       ],
     },
   },
+    // 注册 markdown-it 插件
+    markdown: {
+        config: md => {
+            md.use(mdPlugin)
+        }
+    }
 });
