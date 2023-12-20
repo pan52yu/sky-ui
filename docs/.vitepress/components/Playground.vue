@@ -1,6 +1,8 @@
 <!-- docs/.vitepress/components/Playground.vue -->
 <script setup lang="ts">
-import { ref, watch, watchEffect, reactive, onMounted } from 'vue';
+import {
+  ref, watch, watchEffect, reactive, onMounted,
+} from 'vue';
 import { Repl, ReplStore, File } from '@vue/repl';
 import '@vue/repl/style.css';
 import { APP_WRAPPER_CODE } from './Playground';
@@ -9,7 +11,7 @@ let Monaco: any;
 const isMounted = ref(false);
 // 为了适配服务端渲染，组件本身，以及 Monaco 编辑器只在挂载完成后渲染
 onMounted(() => {
-  import('@vue/repl/monaco-editor').then(res => {
+  import('@vue/repl/monaco-editor').then((res) => {
     Monaco = res.default;
     isMounted.value = true;
   });
@@ -34,7 +36,7 @@ const tsVersions = ref<string[]>([]);
 async function fetchTsVersions() {
   const res = await fetch('https://data.jsdelivr.com/v1/package/npm/typescript');
   const { versions } = (await res.json()) as { versions: string[] };
-  tsVersions.value = versions.filter(v => !v.includes('dev') && !v.includes('insiders'));
+  tsVersions.value = versions.filter((v) => !v.includes('dev') && !v.includes('insiders'));
 }
 
 fetchTsVersions();
@@ -72,7 +74,7 @@ fetchVueVersions();
 
 const isVueLoading = ref(false);
 
-watch(vueVersion, v => {
+watch(vueVersion, (v) => {
   setVueVersion(v);
 });
 
@@ -91,7 +93,7 @@ const uiVersions = ref<string[]>([]);
 
 /** 获取所有的组件库版本 */
 async function fetchUiVersions() {
-  const res = await fetch('https://data.jsdelivr.com/v1/package/npm/@openxui/ui');
+  const res = await fetch('https://data.jsdelivr.com/v1/package/npm/@skyuix/ui');
   const { versions } = (await res.json()) as { versions: string[] };
   uiVersions.value = versions;
 }
@@ -100,7 +102,7 @@ fetchUiVersions();
 
 watch(
   uiVersion,
-  v => {
+  (v) => {
     setUiVersion(v);
   },
   { immediate: true },
@@ -111,11 +113,11 @@ function setUiVersion(version: string) {
   // 加载组件库的全量 js 资源
   store.setImportMap({
     imports: {
-      '@openxui/ui': `https://fastly.jsdelivr.net/npm/@openxui/ui@${version}/dist/openxui-ui.full.min.mjs`,
+      '@skyuix/ui': `https://fastly.jsdelivr.net/npm/@skyuix/ui@${version}/dist/skyuix-ui.full.min.mjs`,
     },
   });
   // 加载组件库的全量样式
-  previewOptions.headHTML = `<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@openxui/ui@${version}/dist/style/index.css">`;
+  previewOptions.headHTML = `<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@skyuix/ui@${version}/dist/style/index.css">`;
 }
 </script>
 
@@ -126,27 +128,34 @@ function setUiVersion(version: string) {
       :editor="Monaco"
       :auto-resize="true"
       :clear-console="false"
-      :preview-options="previewOptions" />
+      :preview-options="previewOptions"
+    />
 
     <Teleport to=".VPNavBarSearch">
       <div class="flex items-center text-14px">
         <label class="playground-label">SkyUI: </label>
         <select v-model="uiVersion" class="playground-select">
-          <option value="latest">latest</option>
+          <option value="latest">
+            latest
+          </option>
           <option v-for="item in uiVersions" :key="item" :value="item">
             {{ item }}
           </option>
         </select>
         <label class="playground-label">Vue: </label>
         <select v-model="vueVersion" class="playground-select" :disabled="isVueLoading">
-          <option value="latest">latest</option>
+          <option value="latest">
+            latest
+          </option>
           <option v-for="item in vueVersions" :key="item" :value="item">
             {{ item }}
           </option>
         </select>
         <label class="playground-label">TypeScript: </label>
         <select v-model="store.state.typescriptVersion" class="playground-select">
-          <option value="latest">latest</option>
+          <option value="latest">
+            latest
+          </option>
           <option v-for="item in tsVersions" :key="item" :value="item">
             {{ item }}
           </option>
