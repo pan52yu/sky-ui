@@ -1,4 +1,6 @@
 // packages/input/src/index.ts
-import SkyInput from './input.vue';
+import Input from './input.vue';
 
-export { SkyInput };
+export { Input };
+export type InputInstance = InstanceType<typeof Input>;
+export * from './props';

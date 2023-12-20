@@ -1,32 +1,47 @@
+<!-- packages/input/src/input.vue -->
 <script setup lang="ts">
-// packages/input/src/input.vue
+import { ref } from 'vue';
 import { hello } from '@skyui/shared';
+import {
+  defaultInputProps,
+  InputProps,
+  InputEmits,
+  InputExpose,
+} from './props';
 
 defineOptions({
   name: 'SkyInput',
 });
 
-withDefaults(defineProps<{
-  modelValue?: string;
-}>(), {
-  modelValue: '',
-});
+withDefaults(
+  defineProps<InputProps>(),
+  defaultInputProps(),
+);
 
-const emit = defineEmits<{
-  (event: 'update:modelValue', val: string): void;
-}>();
+const emit = defineEmits<InputEmits>();
 
 function inputHandler(e: any) {
   const { value } = e.target;
   emit('update:modelValue', value);
-  hello(value);
+  hello(`${value}`);
 }
+
+function clear() {
+  emit('update:modelValue', '');
+}
+
+const a = ref(0);
+
+defineExpose<InputExpose>({
+  clear,
+  a,
+});
 
 </script>
 
 <template>
   <input
-    class="sky-input"
+    class="openx-input"
     type="text"
     :value="modelValue"
     @input="inputHandler"

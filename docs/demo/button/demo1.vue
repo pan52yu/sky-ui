@@ -1,13 +1,13 @@
 <!-- docs/demo/button/demo1.vue -->
 <script setup lang="ts">
-import { ref, reactive } from 'vue';
+import { reactive, ref } from 'vue';
 import {
   Button,
   ConfigProvider,
-  useTheme,
-  tinyThemeVars,
-  themeVars,
   SkyuiCssVarsConfig,
+  themeVars,
+  tinyThemeVars,
+  useTheme,
 } from '@skyui/ui';
 
 const { setTheme } = useTheme();
@@ -26,6 +26,7 @@ function switchGlobalTheme() {
 
 const currentSecondLineTheme = ref<'default' | 'tiny'>('default');
 const secondLineThemeVars: SkyuiCssVarsConfig = reactive({});
+
 function switchSecondLineTheme() {
   if (currentSecondLineTheme.value === 'tiny') {
     currentSecondLineTheme.value = 'default';
@@ -137,9 +138,6 @@ function switchSecondLineTheme() {
       <Button @click="switchSecondLineTheme">
         切换第二行主题1，当前：{{ currentSecondLineTheme }}
       </Button>
-    </div>
-    <div>
-      <i class="i-op-alert-marked inline-block text-60px c-success" />
     </div>
   </div>
 </template>

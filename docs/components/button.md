@@ -12,6 +12,8 @@
 
 :::
 
-## Button API
+## 基础用法2
 
-待补充
+## [Button Props](../api/interfaces/Button.ButtonProps.md)
+
+## [Button Slots](../api/interfaces/Button.ButtonSlots.md)

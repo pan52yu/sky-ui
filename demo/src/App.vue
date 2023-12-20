@@ -3,7 +3,7 @@
 import { ref, reactive } from 'vue';
 import {
   Button,
-  SkyInput,
+  Input,
   ConfigProvider,
   useTheme,
   tinyThemeVars,
@@ -90,7 +90,7 @@ function switchSecondLineTheme() {
         切换第二行主题，当前：{{ currentSecondLineTheme }}
       </Button>
     </div>
-    <sky-input />
+    <Input />
   </div>
 </template>
 
