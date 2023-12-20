@@ -48,5 +48,9 @@
     "@skyui/input": "workspace:^",
     "@skyui/shared": "workspace:^",
     "@skyui/styles": "workspace:^"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }

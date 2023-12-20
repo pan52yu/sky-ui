@@ -4,10 +4,7 @@ import { LibraryOptions, LibraryFormats, BuildOptions } from 'vite';
 import { statSync } from 'node:fs';
 import { join } from 'node:path';
 import {
-  kebabCase,
-  camelCase,
-  absCwd,
-  relCwd,
+  kebabCase, camelCase, absCwd, relCwd,
 } from '../utils';
 import { getOptions, GenerateConfigOptions } from './options';
 
@@ -17,18 +14,21 @@ import { getOptions, GenerateConfigOptions } from './options';
  * @param format 产物格式
  * @param buildMode 构建模式
  */
-export function getOutFileName(fileName: string, format: LibraryFormats, buildMode: GenerateConfigOptions['mode']) {
-  const formatName = format as ('es' | 'umd');
+export function getOutFileName(
+  fileName: string,
+  format: LibraryFormats,
+  buildMode: GenerateConfigOptions['mode'] = 'package',
+) {
+  const formatName = format as 'es' | 'umd';
   const ext = formatName === 'es' ? '.mjs' : '.umd.js';
-  let tail: string;
+  let tail = '';
   // 全量构建时，文件名后缀的区别
   if (buildMode === 'full') {
-    tail = '.full.js';
+    tail += '.full';
   } else if (buildMode === 'full-min') {
-    tail = '.full.min.js';
-  } else {
-    tail = ext;
+    tail += '.full.min';
   }
+  tail += ext;
   return `${fileName}${tail}`;
 }
 
@@ -42,10 +42,7 @@ export function getLib(
   options: GenerateConfigOptions = {},
 ): Pick<BuildOptions, 'lib' | 'minify' | 'sourcemap' | 'outDir' | 'emptyOutDir'> {
   const {
-    entry,
-    outDir,
-    mode,
-    fileName,
+    entry, outDir, mode, fileName,
   } = getOptions(options);
 
   // 文件名称，默认取 package.json 的 name 字段转换成 kebab-case：@skyui/build => skyui-build
@@ -54,7 +51,8 @@ export function getLib(
   const libOptions: LibraryOptions = {
     entry,
     // 全量构建只生产 umd 产物
-    formats: mode === 'package' ? ['es', 'umd'] : ['umd'],
+    // formats: mode === 'package' ? ['es', 'umd'] : ['umd'],
+    formats: ['es', 'umd'],
     name: camelCase(finalName),
     fileName: (format) => {
       const formatName = format as LibraryFormats;

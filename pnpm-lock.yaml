@@ -111,6 +111,9 @@ importers:
       '@skyui/ui':
         specifier: workspace:^
         version: link:../packages/ui
+      '@vue/repl':
+        specifier: ^3.0.1
+        version: registry.npmmirror.com/@vue/repl@3.0.1
       markdown-it:
         specifier: ^14.0.0
         version: registry.npmmirror.com/markdown-it@14.0.0
@@ -5987,6 +5990,12 @@ packages:
     dependencies:
       '@vue/shared': registry.npmmirror.com/@vue/shared@3.3.13
     dev: true
+
+  registry.npmmirror.com/@vue/repl@3.0.1:
+    resolution: {integrity: sha512-o3/0bVx8n70BZ+OD/r3KMuWuUR93zA99YtXOtTAKYMYvHf18DfdQt7n1wyIaOgXwK1HwTfUYWJA261Wdyh+U2Q==, tarball: https://registry.npmmirror.com/@vue/repl/-/repl-3.0.1.tgz}
+    name: '@vue/repl'
+    version: 3.0.1
+    dev: false
 
   registry.npmmirror.com/@vue/runtime-core@3.3.13:
     resolution: {integrity: sha512-1TzA5TvGuh2zUwMJgdfvrBABWZ7y8kBwBhm7BXk8rvdx2SsgcGfz2ruv2GzuGZNvL1aKnK8CQMV/jFOrxNQUMA==, tarball: https://registry.npmmirror.com/@vue/runtime-core/-/runtime-core-3.3.13.tgz}
