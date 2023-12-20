@@ -1,8 +1,9 @@
 <!-- docs/.vitepress/components/Playground.vue -->
 <script setup lang="ts">
-import { ref, reactive, watch, onMounted } from 'vue';
-import { Repl, ReplStore } from '@vue/repl';
+import { ref, reactive, watch, onMounted, watchEffect } from 'vue';
+import { Repl, ReplStore, File } from '@vue/repl';
 import '@vue/repl/style.css';
+import { APP_WRAPPER_CODE } from './Playground';
 
 let Monaco: any;
 const isMounted = ref(false);
@@ -15,7 +16,12 @@ onMounted(() => {
 });
 
 // repl组件需要store管理状态
-const store = new ReplStore({});
+const store = new ReplStore({
+  serializedState: window.location.hash.slice(1),
+});
+
+// @vue/repl 的内容变化时，及时同步到 url 参数中
+watchEffect(() => window.history.replaceState({}, '', store.serialize()));
 
 const previewOptions = reactive({});
 
@@ -77,6 +83,41 @@ function setVueVersion(v: string) {
     isVueLoading.value = false;
   });
 }
+
+const uiVersion = ref('latest');
+const uiVersions = ref<string[]>([]);
+
+/** 获取所有的组件库版本 */
+async function fetchUiVersions() {
+  const res = await fetch('https://data.jsdelivr.com/v1/package/npm/@openxui/ui');
+  const { versions } = (await res.json()) as { versions: string[] };
+  uiVersions.value = versions;
+}
+
+fetchUiVersions();
+
+watch(
+  uiVersion,
+  v => {
+    setUiVersion(v);
+  },
+  { immediate: true },
+);
+
+/** 设置组件库的版本 */
+function setUiVersion(version: string) {
+  // 加载组件库的全量 js 资源
+  store.setImportMap({
+    imports: {
+      '@openxui/ui': `https://fastly.jsdelivr.net/npm/@openxui/ui@${version}/dist/openxui-ui.full.min.mjs`,
+    },
+  });
+  // 加载组件库的全量样式
+  previewOptions.headHTML = `<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@openxui/ui@${version}/dist/style/index.css">`;
+}
+
+store.state.mainFile = 'src/AppWrapper.vue';
+store.addFile(new File('src/AppWrapper.vue', APP_WRAPPER_CODE, true));
 </script>
 
 <template>
@@ -90,6 +131,14 @@ function setVueVersion(v: string) {
 
     <Teleport to=".VPNavBarSearch">
       <div class="flex items-center text-14px">
+        <label class="playground-label">SkyUI: </label>
+        <select v-model="uiVersion" class="playground-select">
+          <option value="latest">latest</option>
+          <option v-for="item in uiVersions" :key="item" :value="item">
+            {{ item }}
+          </option>
+        </select>
+
         <label class="playground-label">Vue: </label>
         <select v-model="vueVersion" class="playground-select" :disabled="isVueLoading">
           <option value="latest">latest</option>

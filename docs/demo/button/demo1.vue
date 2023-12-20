@@ -142,14 +142,12 @@ function switchSecondLineTheme() {
   </div>
 </template>
 
-<style lang="scss" scoped>
-.btns {
-  :deep(.op-button) {
-    margin-bottom: 10px;
+<style scoped>
+:deep(.op-button:not(:first-child)) {
+  margin-left: 10px;
+}
 
-    &:not(:first-child) {
-      margin-left: 10px;
-    }
-  }
+:deep(.op-button) {
+  margin-bottom: 10px;
 }
 </style>
